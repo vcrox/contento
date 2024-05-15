@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f73622c7ff2e1c507fe02bffb079a3c4",
+    "content-hash": "85a05e3af94d1861cf94e3790e7c87f3",
     "packages": [
         {
             "name": "asantibanez/livewire-charts",
@@ -657,6 +657,104 @@
                 "source": "https://github.com/eclipxe13/CfdiUtils"
             },
             "time": "2024-02-21T03:30:40+00:00"
+        },
+        {
+            "name": "eclipxe/enum",
+            "version": "v0.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eclipxe13/enum.git",
+                "reference": "860e2592c2c9bcfa522c62d9cf3f3559014f8d28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eclipxe13/enum/zipball/860e2592c2c9bcfa522c62d9cf3f3559014f8d28",
+                "reference": "860e2592c2c9bcfa522c62d9cf3f3559014f8d28",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eclipxe\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com",
+                    "homepage": "https://eclipxe.com.mx/"
+                }
+            ],
+            "description": "Enum based on the Brent Roose enum idea https://stitcher.io/blog/php-enums",
+            "homepage": "https://github.com/eclipxe13/enum",
+            "keywords": [
+                "enum",
+                "reflection"
+            ],
+            "support": {
+                "issues": "https://github.com/eclipxe13/enum/issues",
+                "source": "https://github.com/eclipxe13/enum"
+            },
+            "time": "2021-06-18T02:12:56+00:00"
+        },
+        {
+            "name": "eclipxe/micro-catalog",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eclipxe13/micro-catalog.git",
+                "reference": "a2e101b477a7f7e05ae9798f3bf744ede89098b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eclipxe13/micro-catalog/zipball/a2e101b477a7f7e05ae9798f3bf744ede89098b5",
+                "reference": "a2e101b477a7f7e05ae9798f3bf744ede89098b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eclipxe\\MicroCatalog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com",
+                    "homepage": "https://eclipxe.com.mx/"
+                }
+            ],
+            "description": "Micro catalog template class, useful to create value objects based on a known small catalog",
+            "homepage": "https://github.com/eclipxe13/micro-catalog",
+            "keywords": [
+                "catalog",
+                "generic"
+            ],
+            "support": {
+                "issues": "https://github.com/eclipxe13/micro-catalog/issues",
+                "source": "https://github.com/eclipxe13/micro-catalog"
+            },
+            "time": "2022-07-18T23:42:15+00:00"
         },
         {
             "name": "eclipxe/xmlresourceretriever",
@@ -1435,6 +1533,61 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "itelmenko/laravel-mysql-logger",
+            "version": "v0.1.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itelmenko/laravel-mysql-logger.git",
+                "reference": "9a15432f912c634b5ec0a969e0975349985a879d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itelmenko/laravel-mysql-logger/zipball/9a15432f912c634b5ec0a969e0975349985a879d",
+                "reference": "9a15432f912c634b5ec0a969e0975349985a879d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Logger\\Laravel\\Providers\\MonologMysqlHandlerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Logger": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Telmenko",
+                    "email": "igor.telmenko@gmail.com"
+                }
+            ],
+            "description": "Laravel 5.6+ MySQL driver for Monolog",
+            "homepage": "https://github.com/itelmenko/laravel-mysql-logger",
+            "keywords": [
+                "laravel",
+                "laravel5.6",
+                "log",
+                "monolog",
+                "mysql"
+            ],
+            "support": {
+                "issues": "https://github.com/itelmenko/laravel-mysql-logger/issues",
+                "source": "https://github.com/itelmenko/laravel-mysql-logger/tree/v0.1.15"
+            },
+            "time": "2020-08-28T06:26:45+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2340,6 +2493,51 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
+            "name": "lessclick-system/barcode",
+            "version": "3.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/lessclick-systems/barcode.git",
+                "reference": "13f1eff2287f12c83c8e00a22d5ea9217c00b72e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/lessclick-systems/barcode/get/13f1eff2287f12c83c8e00a22d5ea9217c00b72e.zip",
+                "reference": "13f1eff2287f12c83c8e00a22d5ea9217c00b72e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CodeItNow\\": "CodeItNow/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Akhtar Khan",
+                    "email": "er.akhtarkhan@gmail.com"
+                }
+            ],
+            "description": "Fork do codeitnowin/barcode que foi descontinuado",
+            "homepage": "https://bitbucket.org/lessclick-systems/barcode.git",
+            "keywords": [
+                "barcode",
+                "lessclick-system"
+            ],
+            "support": {
+                "source": "https://bitbucket.org/lessclick-systems/barcode/src/13f1eff2287f12c83c8e00a22d5ea9217c00b72e/?at=3.0.6"
+            },
+            "time": "2022-08-08T14:17:24+00:00"
+        },
+        {
             "name": "livewire/livewire",
             "version": "v3.4.12",
             "source": {
@@ -2755,6 +2953,73 @@
                 "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
             },
             "time": "2022-12-02T22:17:43+00:00"
+        },
+        {
+            "name": "masterminds/html5",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Masterminds/html5-php.git",
+                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Masterminds\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Butcher",
+                    "email": "technosophos@gmail.com"
+                },
+                {
+                    "name": "Matt Farina",
+                    "email": "matt@mattfarina.com"
+                },
+                {
+                    "name": "Asmir Mustafic",
+                    "email": "goetas@gmail.com"
+                }
+            ],
+            "description": "An HTML5 parser and serializer.",
+            "homepage": "http://masterminds.github.io/html5-php",
+            "keywords": [
+                "HTML5",
+                "dom",
+                "html",
+                "parser",
+                "querypath",
+                "serializer",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/Masterminds/html5-php/issues",
+                "source": "https://github.com/Masterminds/html5-php/tree/2.9.0"
+            },
+            "time": "2024-03-31T07:05:07+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3255,6 +3520,358 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "phpcfdi/cfdi-expresiones",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/cfdi-expresiones.git",
+                "reference": "29243c9810b7ec226f491b14c93432669c48facc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/cfdi-expresiones/zipball/29243c9810b7ec226f491b14c93432669c48facc",
+                "reference": "29243c9810b7ec226f491b14c93432669c48facc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\CfdiExpresiones\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com",
+                    "homepage": "https://eclipxe.com.mx/"
+                }
+            ],
+            "description": "Genera expresiones de CFDI 4.0, CFDI 3.3, CFDI 3.2, RET 1.0 y RET 2.0",
+            "homepage": "https://github.com/phpcfdi/cfdi-expresiones",
+            "keywords": [
+                "cfdi",
+                "phpcfdi",
+                "sat"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/cfdi-expresiones/issues",
+                "source": "https://github.com/phpcfdi/cfdi-expresiones"
+            },
+            "time": "2022-06-27T17:02:05+00:00"
+        },
+        {
+            "name": "phpcfdi/credentials",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/credentials.git",
+                "reference": "f1d8fa6f39ce9d8c7a1e1c286c02c471ff7c46b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/credentials/zipball/f1d8fa6f39ce9d8c7a1e1c286c02c471ff7c46b9",
+                "reference": "f1d8fa6f39ce9d8c7a1e1c286c02c471ff7c46b9",
+                "shasum": ""
+            },
+            "require": {
+                "eclipxe/enum": "^0.2.0",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\Credentials\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com"
+                }
+            ],
+            "description": "Library to use eFirma (fiel) and CSD (sellos) from SAT",
+            "homepage": "https://github.com/phpcfdi/credentials",
+            "keywords": [
+                "certificado",
+                "cfdi",
+                "efirma",
+                "fiel",
+                "sat",
+                "sello"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/credentials/issues",
+                "source": "https://github.com/phpcfdi/credentials"
+            },
+            "time": "2023-05-24T22:21:41+00:00"
+        },
+        {
+            "name": "phpcfdi/csf-scraper",
+            "version": "v0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/csf-scraper.git",
+                "reference": "26f41a1110428eade85e353826b8789e7a76ec5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/csf-scraper/zipball/26f41a1110428eade85e353826b8789e7a76ec5d",
+                "reference": "26f41a1110428eade85e353826b8789e7a76ec5d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^7.4",
+                "php": ">=8.0",
+                "phpcfdi/rfc": "^1.1",
+                "symfony/css-selector": ">=6.0",
+                "symfony/dom-crawler": ">=6.0",
+                "symfony/process": ">=6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\CsfScraper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cesar Aguilera",
+                    "email": "cesargnu29@gmail.com"
+                },
+                {
+                    "name": "Misael Limón",
+                    "email": "misael.limon@ocelotlstudio.com"
+                },
+                {
+                    "name": "Fernando Isidro",
+                    "email": "fernando.isidro@ocelotlstudio.com"
+                }
+            ],
+            "description": "Obtiene los datos fiscales actuales de una persona moral o física dado su RFC y CIFID",
+            "homepage": "https://github.com/phpcfdi/csf-scraper",
+            "keywords": [
+                "csf",
+                "phpcfdi",
+                "sat"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/csf-scraper/issues",
+                "source": "https://github.com/phpcfdi/csf-scraper"
+            },
+            "time": "2024-01-10T17:18:49+00:00"
+        },
+        {
+            "name": "phpcfdi/finkok",
+            "version": "v0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/finkok.git",
+                "reference": "393a049686720cb5afa68aa8458949c47a5a340e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/finkok/zipball/393a049686720cb5afa68aa8458949c47a5a340e",
+                "reference": "393a049686720cb5afa68aa8458949c47a5a340e",
+                "shasum": ""
+            },
+            "require": {
+                "eclipxe/enum": "^0.2.0",
+                "eclipxe/micro-catalog": "^0.1.0",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-soap": "*",
+                "php": ">=7.3",
+                "phpcfdi/cfdi-expresiones": "^3.2",
+                "phpcfdi/credentials": "^1.0.1",
+                "phpcfdi/xml-cancelacion": "^2.0.2",
+                "psr/log": "^1.1 || ^2.0 || ^3.0",
+                "robrichards/xmlseclibs": "^3.0.4"
+            },
+            "require-dev": {
+                "eclipxe/cfdiutils": "^2.23.2",
+                "ext-fileinfo": "*",
+                "phpcfdi/rfc": "^1.1",
+                "phpunit/phpunit": "^9.5.10",
+                "symfony/dotenv": "^5.1 || ^6.0 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\Finkok\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com",
+                    "homepage": "https://eclipxe.com.mx/"
+                }
+            ],
+            "description": "Librería para conectar con la API de servicios de FINKOK",
+            "homepage": "https://github.com/phpcfdi/finkok",
+            "keywords": [
+                "cfdi",
+                "finkok",
+                "phpcfdi",
+                "sat"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/finkok/issues",
+                "source": "https://github.com/phpcfdi/finkok"
+            },
+            "time": "2024-04-13T04:55:30+00:00"
+        },
+        {
+            "name": "phpcfdi/rfc",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/rfc.git",
+                "reference": "2c81277d375fe4cd8799eeca13be85102a980c6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/rfc/zipball/2c81277d375fe4cd8799eeca13be85102a980c6b",
+                "reference": "2c81277d375fe4cd8799eeca13be85102a980c6b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.13",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\Rfc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com",
+                    "homepage": "https://eclipxe.com.mx/"
+                }
+            ],
+            "description": "PHP library to deal with Mexican RFC",
+            "homepage": "https://github.com/phpcfdi/rfc",
+            "keywords": [
+                "mexico",
+                "sat"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/rfc/issues",
+                "source": "https://github.com/phpcfdi/rfc"
+            },
+            "time": "2022-04-29T04:37:36+00:00"
+        },
+        {
+            "name": "phpcfdi/xml-cancelacion",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcfdi/xml-cancelacion.git",
+                "reference": "13abae78d4314f59bcc3d18d3a4bcbb6cd780f47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcfdi/xml-cancelacion/zipball/13abae78d4314f59bcc3d18d3a4bcbb6cd780f47",
+                "reference": "13abae78d4314f59bcc3d18d3a4bcbb6cd780f47",
+                "shasum": ""
+            },
+            "require": {
+                "eclipxe/enum": "^0.2",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "php": ">=7.3",
+                "phpcfdi/credentials": "^1.1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "robrichards/xmlseclibs": "^3.1.0"
+            },
+            "suggest": {
+                "robrichards/xmlseclibs": "Create document signatures (partially) using xmlseclibs"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCfdi\\XmlCancelacion\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos C Soto",
+                    "email": "eclipxe13@gmail.com"
+                }
+            ],
+            "description": "Genera documentos de cancelación de CFDI firmados (XMLSEC)",
+            "homepage": "https://github.com/phpcfdi/xml-cancelacion",
+            "keywords": [
+                "PeticionConsultaRelacionados",
+                "SolicitudAceptacionRechazo",
+                "cancelacion",
+                "cfdi",
+                "phpcfdi",
+                "sat"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcfdi/xml-cancelacion/issues",
+                "source": "https://github.com/phpcfdi/xml-cancelacion"
+            },
+            "time": "2022-12-15T19:01:13+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -4153,6 +4770,93 @@
             "time": "2024-04-27T21:32:50+00:00"
         },
         {
+            "name": "robrichards/xmlseclibs",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robrichards/xmlseclibs.git",
+                "reference": "f8f19e58f26cdb42c54b214ff8a820760292f8df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/f8f19e58f26cdb42c54b214ff8a820760292f8df",
+                "reference": "f8f19e58f26cdb42c54b214ff8a820760292f8df",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A PHP library for XML Security",
+            "homepage": "https://github.com/robrichards/xmlseclibs",
+            "keywords": [
+                "security",
+                "signature",
+                "xml",
+                "xmldsig"
+            ],
+            "support": {
+                "issues": "https://github.com/robrichards/xmlseclibs/issues",
+                "source": "https://github.com/robrichards/xmlseclibs/tree/3.1.1"
+            },
+            "time": "2020-09-05T13:00:25+00:00"
+        },
+        {
+            "name": "rurounize/numeros-a-letras",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elialejandro/NumerosALetras.git",
+                "reference": "828e8174c72ddbbe11057a23be38610cfb6140f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elialejandro/NumerosALetras/zipball/828e8174c72ddbbe11057a23be38610cfb6140f6",
+                "reference": "828e8174c72ddbbe11057a23be38610cfb6140f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.16"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rurounize\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Eli Alejandro Moreno López",
+                    "email": "iscelialejandro@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/elialejandro/NumerosALetras",
+            "support": {
+                "issues": "https://github.com/elialejandro/NumerosALetras/issues",
+                "source": "https://github.com/elialejandro/NumerosALetras/tree/master"
+            },
+            "time": "2015-11-02T00:42:48+00:00"
+        },
+        {
             "name": "spatie/laravel-permission",
             "version": "5.11.1",
             "source": {
@@ -4459,6 +5163,73 @@
                 }
             ],
             "time": "2024-04-18T09:32:20+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v6.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "2088c5da700b1e7a8689fffc10dda6c1f643deea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/2088c5da700b1e7a8689fffc10dda6c1f643deea",
+                "reference": "2088c5da700b1e7a8689fffc10dda6c1f643deea",
+                "shasum": ""
+            },
+            "require": {
+                "masterminds/html5": "^2.6",
+                "php": ">=8.1",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "symfony/css-selector": "^5.4|^6.0|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Eases DOM navigation for HTML and XML documents",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/dom-crawler/tree/v6.4.7"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-04-18T09:22:46+00:00"
         },
         {
             "name": "symfony/error-handler",
@@ -6519,6 +7290,103 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.2.7"
             },
             "time": "2023-12-08T13:03:43+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "7.16.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "02ad214b0cc9fc513bd67df251d54aed8901284f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/02ad214b0cc9fc513bd67df251d54aed8901284f",
+                "reference": "02ad214b0cc9fc513bd67df251d54aed8901284f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3 || ^7.0",
+                "phpunit/phpunit": ">=7.0 < 10"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "src/Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "https://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "support": {
+                "issues": "https://github.com/twilio/twilio-php/issues",
+                "source": "https://github.com/twilio/twilio-php/tree/7.16.2"
+            },
+            "time": "2024-04-01T10:34:42+00:00"
+        },
+        {
+            "name": "ultramsg/whatsapp-php-sdk",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ultramsg/whatsapp-php-sdk.git",
+                "reference": "a1234da23bda1b4094dfadf221c6fd41a11416ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ultramsg/whatsapp-php-sdk/zipball/a1234da23bda1b4094dfadf221c6fd41a11416ec",
+                "reference": "a1234da23bda1b4094dfadf221c6fd41a11416ec",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "ultramsg.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ultramsg.com",
+                    "email": "info@ultramsg.com"
+                }
+            ],
+            "description": "Lightweight PHP library for WhatsApp API to send the whatsappp messages in PHP provided by ultramsg.com",
+            "homepage": "https://ultramsg.com",
+            "keywords": [
+                "whatsapp-api",
+                "whatsapp-api-php",
+                "whatsapp-bot",
+                "whatsapp-chat"
+            ],
+            "support": {
+                "issues": "https://github.com/ultramsg/whatsapp-php-sdk/issues",
+                "source": "https://github.com/ultramsg/whatsapp-php-sdk/tree/2.0.8"
+            },
+            "time": "2023-08-12T15:02:01+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9312,7 +10180,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "rurounize/numeros-a-letras": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
