@@ -1,3 +1,8 @@
+@import "custom";
+@import "ar-js-viewer.css";
+@import "argon-dashboard-tailwind.min.css";
+@import "nucleo-icons.css";
+@import "nucleo-svg.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
