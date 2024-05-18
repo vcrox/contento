@@ -21,6 +21,12 @@
                             <a href={{ route('usuarios.index') }}>
                                 Usuarios
                             </a>
+                            <a href={{ route('roles.index') }}>
+                                Roles
+                            </a>
+                            <a href={{ route('permisos.index') }}>
+                                Permisos
+                            </a>
 
                             {{-- <span class="separator"></span> --}}
 

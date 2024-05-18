@@ -15,36 +15,13 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('tramites.index')" :active="request()->routeIs('tramites.*')">
-                        {{ __('Trámites') }}
-                    </x-nav-link>
                     <x-nav-link-parent :href="'#'" :active="request()->routeIs('regimenes.*')">
                         <x-slot name="name">{{ __('Catálogos') }}</x-slot>
                         <x-slot name="children">
                             {{-- <a href={{ route('usuarios.index') }}>
                                 Usuarios
                             </a> --}}
-                            <a href={{ route('movimientos.index') }}>
-                                Aplicación
-                            </a>
-                            <a href={{ route('consulados.index') }}>
-                                Consulados
-                            </a>
-                            <a href={{ route('estatus.index') }}>
-                                Estatus
-                            </a>
-                            <a href={{ route('tipotramites.index') }}>
-                                Tipo trámites
-                            </a>
-                            <a href={{ route('tipodocumentos.index') }}>
-                                Tipo documentos
-                            </a>
-                            <a href={{ route('agencias.index') }}>
-                                Agencias
-                            </a>
-                            <a href={{ route('solicitantes.index') }}>
-                                Solicitantes
-                            </a>
+
                             {{-- <span class="separator"></span> --}}
 
                         </x-slot>
@@ -112,36 +89,13 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('tramites.index')" :active="request()->routeIs('tramites.*')">
-                {{ __('Trámites') }}
-            </x-responsive-nav-link>
+
             <x-responsive-nav-link-parent :href="'#'" :active="request()->routeIs('usuarios.*')">
                 <x-slot name="name">Catálogos</x-slot>
                 <x-slot name="children">
                     {{-- <a href={{ route('usuarios.index') }}>
                         Usuarios
                     </a> --}}
-                    <a href={{ route('movimientos.index') }}>
-                        Aplicación
-                    </a>
-                    <a href={{ route('consulados.index') }}>
-                        Consulados
-                    </a>
-                    <a href={{ route('estatus.index') }}>
-                        Estatus
-                    </a>
-                    <a href={{ route('tipotramites.index') }}>
-                        Tipo trámites
-                    </a>
-                    <a href={{ route('tipodocumentos.index') }}>
-                        Tipo documentos
-                    </a>
-                    <a href={{ route('agencias.index') }}>
-                        Agencias
-                    </a>
-                    <a href={{ route('solicitantes.index') }}>
-                        Solicitantes
-                    </a>
                     {{-- <span class="separator"></span> --}}
                 </x-slot>
             </x-responsive-nav-link-parent>

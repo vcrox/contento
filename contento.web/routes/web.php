@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +24,11 @@ Route::view('profile', 'profile')
     ->name('profile');
 Route::middleware(['auth', 'role:SuperAdministrador'])->group(function () {
     Route::resource('usuarios', UsuarioController::class);
+});
+Route::middleware(['auth', 'role:SuperAdministrador'])->group(function () {
+    Route::resource('roles', RolesController::class);
+});
+Route::middleware(['auth', 'role:SuperAdministrador'])->group(function () {
+    Route::resource('permisos', PermissionsController::class);
 });
 require __DIR__ . '/auth.php';

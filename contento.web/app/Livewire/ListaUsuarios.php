@@ -53,6 +53,7 @@ class ListaUsuarios extends Component
     }
     public function mount()
     {
+        $this->authorize("VISUALIZAR USUARIOS");
         // $this->clientes=Cliente::where('tipo_cliente','CLIENTE')->get();
         $this->roles = Role::all()->pluck("name");
     }
@@ -104,12 +105,14 @@ class ListaUsuarios extends Component
     }
     public function create()
     {
+        $this->authorize("CREAR USUARIOS");
         $this->resetForm();
         $this->openModalPopover();
         $this->isEdit = false;
     }
     public function edit($id)
     {
+        $this->authorize("EDITAR USUARIOS");
         $usuario = User::findOrFail($id);
         $this->usuario_id = $id;
         $this->nombre = $usuario->name;
@@ -123,6 +126,7 @@ class ListaUsuarios extends Component
     }
     public function delete()
     {
+        $this->authorize("ELIMINAR USUARIOS");
         User::find($this->usuario_id)->delete();
         $this->closeModalDelete();
         session()->flash('message', "Registro eliminado");
