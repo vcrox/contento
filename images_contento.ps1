@@ -1,35 +1,18 @@
-# Initialize an empty array to store image names
-$images = @()
+# Path to your docker-compose.yml file
+$composeFile = "docker-compose.yml"
 
-# Retrieve the list of images from the Docker Compose configuration
-$dockerImages = docker compose config --images
+# Parse the YAML file to get service names
+$services = (docker-compose -f $composeFile config --services)
 
-# Iterate over each image and add it to the array
-foreach ($img in $dockerImages) {
-    $images += $img
-}
+foreach ($service in $services) {
+    # Get the container ID for the service
+    $containerId = docker-compose -f $composeFile ps -q $service
 
-# Print each image name to verify correctness
-foreach ($image in $images) {
-    Write-Output "Image: $image"
-}
-
-# Save each Docker image to individual files and then combine them into a single tar file
-$tarFiles = @()
-foreach ($image in $images) {
-    $fileName = "$($image.Replace(':', '_')).tar"
-    docker save -o $fileName $image
-    $tarFiles += $fileName
-}
-
-# Combine the individual tar files into a single tar file
-$combinedTarFile = "services.img"
-Remove-Item -Path $combinedTarFile -ErrorAction Ignore
-foreach ($file in $tarFiles) {
-    tar -rf $combinedTarFile -C (Split-Path $file) (Split-Path $file -Leaf)
-}
-
-# Cleanup individual tar files
-foreach ($file in $tarFiles) {
-    Remove-Item -Path $file
+    if ($containerId) {
+        # Export and compress the container
+        docker export $containerId | bash -c "gzip > ${service}.gz"
+        Write-Output "Exported and compressed $service (Container ID: $containerId) to ${service}.gz"
+    } else {
+        Write-Output "Service $service is not running or does not have a container."
+    }
 }
