@@ -1,13 +1,17 @@
+version: "3.8"
+
 services:
   laravel-docker:
     container_name: contento-docker
     build: .
-    # volumes:
-    #   - ./contento.web:/var/www/html
+    volumes:
+      - ./contento.web:/var/www/html
     ports:
-      - 9000:80
-      - 4443:443
-      - 5173:5173
+      - "9000:80"
+      - "4443:443"
+      - "5173:5173"
+    depends_on:
+      - mysql_db
 
   mysql_db:
     image: mysql:8.0.27
@@ -15,15 +19,18 @@ services:
       MYSQL_ROOT_PASSWORD: zxc321...
       MYSQL_DATABASE: contento
     ports:
-      - 13306:3306
+      - "13306:3306"
     volumes:
       - db_data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
-      - 9001:80
+      - "9001:80"
     environment:
-      - PMA_ARBITRARY=1
+      PMA_ARBITRARY: 1
+    depends_on:
+      - mysql_db
+
 volumes:
   db_data:

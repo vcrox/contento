@@ -1,0 +1,70 @@
+# Use a base image with Apache and PHP 7.4
+FROM php:7.4-apache
+
+RUN export COMPOSER_ALLOW_SUPERUSER=1;
+
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    libmagickwand-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    libonig-dev \
+    libssl-dev \
+    openssl \
+    nano \
+    locate \
+    supervisor \
+    openssh-server \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    libicu-dev \
+    && docker-php-ext-install zip \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+
+
+RUN pecl uninstall imagick
+RUN pecl install imagick && docker-php-ext-enable imagick
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+COPY sites-available/apache2.conf /etc/apache2/apache2.conf
+COPY sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+COPY sites-available/web.conf /etc/apache2/sites-available/web.conf
+
+RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
+COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+
+RUN a2ensite web.conf
+
+RUN a2enmod ssl
+RUN a2enmod rewrite
+
+COPY ssl/certificat.crt /etc/ssl/certs/apache-selfsigned.crt
+COPY ssl/private.key /etc/ssl/private/apache-selfsigned.key
+
+COPY vendor_default /var/www/html/vendor
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 22
+
+RUN updatedb
+
+
+# Change permissions for the "vendor" directory
+RUN chown -R www-data:www-data /var/www/html/vendor
+RUN chmod -R 755 /var/www/html/vendor
+
+CMD ["apache2-foreground"]
+CMD ["/usr/bin/supervisord"]

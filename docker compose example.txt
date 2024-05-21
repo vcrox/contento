@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.4-apache
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /mnt/c/dev/web:/var/www/html/
+      - /var/www/html/vendor
+    networks:
+      - my_network
+    depends_on:
+      - mysql
+      - redis
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: myDatabase
+      MYSQL_USER: myDatabase
+      MYSQL_PASSWORD: 123456
+    networks:
+      - my_network
+    volumes:
+      - /mnt/c/dev/myDatabase/docker/sql:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - my_network
+    depends_on:
+      - mysql
+
+  redis:
+    image: redis:latest
+    networks:
+      - my_network
+
+networks:
+  my_network:

@@ -43,3 +43,18 @@ data:
 # apt install nodejs -y
 #docker network disconnect bridge contento-docker
 #docker network connect host contento-docker
+#chmod 777 storage
+#php artisan migrate:fresh --seed
+#/etc/init.d/apache2 restart
+#docker export contento-docker > c:\contento-docker.tar
+
+#dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+#dnf install docker-ce docker-ce-cli containerd.io
+#systemctl enable --now docker
+#firewall-cmd --zone=public --add-masquerade --permanent
+#firewall-cmd --reload
+
+#curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#chmod +x /usr/local/bin/docker-compose
+#usermod -aG docker username
+#docker run hello-world

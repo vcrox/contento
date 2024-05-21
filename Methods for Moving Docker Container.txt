@@ -1,0 +1,122 @@
+Methods for Moving Docker Containers Between Different Hosts
+Using docker save and docker load
+The docker save command can be used to save a container as a tar archive, which can then be copied to the target host using a tool like scp. On the target host, the docker load command can be used to load the saved container image and create a new container.
+
+Example
+Here is an example of how to use these commands −
+
+# On the source host:
+$ docker save my_container > my_container.tar
+
+# Copy the tar archive to the target host using scp:
+$ scp my_container.tar user@target_host:~
+
+# On the target host:
+$ docker load -i my_container.tar
+
+# Create a new container from the image:
+$ docker run -d --name my_new_container my_container
+
+
+Using docker export and docker import
+The docker export command can be used to save a container as a tar archive, which can then be copied to the target host using a tool like scp. On the target host, the docker import command can be used to create a new container image from the tar archive.
+
+Example
+Here is an example of how to use these commands −
+
+# On the source host:
+$ docker export my_container > my_container.tar
+# Copy the tar archive to the target host using scp:
+$ scp my_container.tar user@target_host:~
+# On the target host:
+$ cat my_container.tar | docker import - my_container:latest
+# Create a new container from the image:
+$ docker run -d --name my_new_container my_container:latest
+
+
+Using docker commit and docker push
+The docker commit command can create a new image from a container, and the docker push command can push the image to a registry like Docker Hub. On the target host, the docker pull command can be used to pull the image from the registry and create a new container.
+
+Example
+Here is an example of how to use these commands −
+
+# On the source host:
+$ docker commit my_container my_image
+
+# Push the image to Docker Hub:
+$ docker login
+$ docker push my_image
+
+# On the target host:
+$ docker pull my_image
+
+# Create a new container from the image:
+$ docker run -d --name my_new_container my_image
+
+Using docker save and docker load with a registry
+You can use the docker save, and docker load commands in combination with a container registry like Docker Hub to move containers between different hosts. Here's how it works −
+
+On the source host, you can use docker save to save the container as a tar archive and then use docker push to push the image to the registry. On the target host, you can then use docker pull to pull the image from the registry and docker load to create a new container from the image.
+
+# On the source host:
+$ docker save my_container > my_container.tar
+
+# Load the image into the registry:
+$ cat my_container.tar | docker load
+
+# Tag the image and push it to the registry:
+$ docker tag my_container my_registry/my_image
+$ docker push my_registry/my_image
+
+# On the target host:
+# Pull the image from the registry:
+$ docker pull my_registry/my_image
+
+# Load the image and create a new container:
+$ docker load -i my_container.tar
+$ docker run -d --name my_new_container my_image
+
+Using docker-machine
+docker-machine is a tool that is part of the Docker Toolbox and is used to create and manage Docker hosts on your local machine or in the cloud. It can be used to move containers between different hosts by creating a new host on the target machine and then using the docker-machine scp command to copy the container from the source host to the target host.
+
+Example
+Here is an example of how to use these commands −
+
+# On the source host:
+# Create a tar archive of the container:
+$ docker save my_container > my_container.tar
+
+# On the target host:
+# Create a new Docker host using docker-machine:
+$ docker-machine create --driver=virtualbox my_new_host
+
+# Get the IP address of the new host:
+$ docker-machine ip my_new_host
+
+# Use docker-machine scp to copy the tar archive from the source host to the target host:
+$ docker-machine scp my_container.tar my_new_host:~
+
+# Load the image and create a new container on the target host:
+$ docker-machine ssh my_new_host "docker load -i my_container.tar && docker run -d --name my_new_container my_container"
+
+Using rsync
+rsync is a tool used to synchronize files and directories between two locations. It can be used to move Docker containers between different hosts by copying the container directory from the source host to the target host.
+
+Example
+Here is an example of how to use these commands −
+
+# On the source host:
+# Find the container ID:
+$ docker ps -a
+
+# Copy the container directory to the target host using rsync:
+$ rsync -avz /var/lib/docker/containers/<container_id> user@target_host:/var/lib/docker/containers/
+
+# On the target host:
+# Restart
+Conclusion
+This article provides an overview of the various methods available for moving Docker containers between different hosts. Each method has its benefits and drawbacks, and the best approach for your use case will depend on your specific requirements and constraints.
+
+When choosing a method for moving Docker containers between different hosts, consider factors such as the size of the container, the speed of the network connection, the need to preserve the entire container or just specific files or directories, and the availability of external tools such as a registry or docker-machine.
+
+We hope this information is helpful as you plan and execute the process of moving Docker containers between different hosts. With the right approach, you can take advantage of the flexibility and portability of Docker to deploy your applications in a wide range of environments.
