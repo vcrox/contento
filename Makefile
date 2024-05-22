@@ -19,9 +19,6 @@ up:
 	docker-compose up -d
 install-project:
 	docker exec contento-docker bash -c "git clone https://github.com/vcrox/contento.git ."
-	@make composer-update
-	@make npm-install
-	@make npm-build
 composer-update:
 	docker exec contento-docker bash -c "composer update"
 npm-install:
@@ -43,7 +40,7 @@ data:
 # apt install nodejs -y
 #docker network disconnect bridge contento-docker
 #docker network connect host contento-docker
-#chmod 777 storage
+#chmod 777 -R storage
 #php artisan migrate:fresh --seed
 #/etc/init.d/apache2 restart
 #docker export contento-docker > c:\contento-docker.tar
@@ -58,6 +55,16 @@ data:
 #chmod +x /usr/local/bin/docker-compose
 #usermod -aG docker username
 #docker run hello-world
+
+#./docker-volume-export.sh contento_laravel_data contento_laravel_data.tgz
+#./docker-volume-export.sh contento_mysql_data contento_mysql_data.tgz
+#./docker-volume-export.sh contento_phpmyadmin_data contento_phpmyadmin_data.tgz
+
+#./docker-volume-import.sh contento_laravel_data.tgz contento_laravel_data 
+#./docker-volume-import.sh contento_mysql_data.tgz contento_mysql_data
+#./docker-volume-import.sh contento_phpmyadmin_data.tgz contento_phpmyadmin_data
+
+
 
 #docker export -o contento-mysql_db-1.tar contento-mysql_db-1
 #docker export -o contento-docker.tar contento-docker
@@ -74,6 +81,8 @@ data:
 #docker container run -it contento-mysql_db-1 bash
 #docker container run -it contento-docker bash
 #docker container run -it contento-phpmyadmin-1 bash
+
+
 
 #docker system prune -a
 #docker inspect contento-mysql_db-1
