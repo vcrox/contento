@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   laravel-docker:
     container_name: contento-docker
@@ -12,7 +10,8 @@ services:
       - mysql_db
     volumes:
       - laravel_data:/var/www/html # Bind mount for Laravel application directory
-
+    labels:
+      - docker-volume-backup.stop-during-backup=true
   mysql_db:
     image: mysql:8.0.27
     environment:
@@ -22,7 +21,8 @@ services:
       - "13306:3306"
     volumes:
       - mysql_data:/var/lib/mysql # Volume for MySQL data
-
+    labels:
+      - docker-volume-backup.stop-during-backup=true
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
@@ -33,7 +33,22 @@ services:
       - mysql_db
     volumes:
       - phpmyadmin_data:/var/www/html # Volume for phpMyAdmin data (if needed)
-
+  backup:
+    image: offen/docker-volume-backup:latest
+    restart: always
+    environment:
+      BACKUP_FILENAME: backup-%Y-%m-%dT%H-%M-%S.tar.gz
+      BACKUP_RETENTION_DAYS: 7
+      BACKUP_CRON_EXPRESSION: "* */1 * * *"
+      WEBDAV_URL: https://webdav.pcloud.com/
+      WEBDAV_PATH: /backup_contento/
+      WEBDAV_USERNAME: pavegvar@gmail.com
+      WEBDAV_PASSWORD: Domi1329@
+    volumes:
+      - laravel_data:/backup/laravel_data:ro
+      - mysql_data:/backup/mysql_data:ro
+      - //c/backups:/backup/backups
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 volumes:
   laravel_data: # Volume for Laravel application data
   mysql_data: # Volume for MySQL data
