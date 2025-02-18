@@ -35,5 +35,13 @@ RUN docker-php-ext-install gettext intl pdo_mysql gd soap xsl zip
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
-
+# cd storage
+# mkdir logs
+# mkdir framework
+# mkdir framework/cache && framework/cache/data
+# mkdir framework/sessions
+# mkdir framework/testing
+# mkdir framework/views
+# RUN chown -R www-data:www-data /var/www/html/contento.web/storage /var/www/html/contento.web/bootstrap/cache
+# RUN chmod -R 775 /var/www/html/contento.web/storage /var/www/html/contento.web/bootstrap/cache
 COPY virtualhost.conf /etc/apache2/sites-enabled/000-default.conf

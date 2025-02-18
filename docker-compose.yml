@@ -9,7 +9,10 @@ services:
     depends_on:
       - mysql_db
     volumes:
-      - laravel_data:/var/www/html # Bind mount for Laravel application directory
+      # - laravel_data:/var/www/html # Bind mount for Laravel application directory
+      - ./:/var/www/html
+      - laravel_data:/var/www/html/contento.web/storage # Keep storage persistent
+      - laravel_cache:/var/www/html/contento.web/bootstrap/cache # Ensure cache directory has correct permissions
     labels:
       - docker-volume-backup.stop-during-backup=true
   mysql_db:
@@ -32,7 +35,7 @@ services:
     depends_on:
       - mysql_db
     volumes:
-      - phpmyadmin_data:/var/www/html # Volume for phpMyAdmin data (if needed)
+      - phpmyadmin_data:/var/www/html/phpmyadmin # Volume for phpMyAdmin data (if needed)
   backup:
     image: offen/docker-volume-backup:latest
     restart: always
@@ -51,5 +54,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 volumes:
   laravel_data: # Volume for Laravel application data
+  laravel_cache: # Volume for Laravel application data
   mysql_data: # Volume for MySQL data
   phpmyadmin_data: # Volume for phpMyAdmin data (if needed)
